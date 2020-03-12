@@ -1,16 +1,15 @@
 {
   "name": "generator-kt-hippy",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Initialization of a kt hippy project.",
   "homepage": "",
   "author": {
     "name": "Coco",
     "email": "308695699@qq.com",
-    "url": ""
+    "url": "https://git.code.oa.com/video_keting_webdoc/generator-kt-hippy"
   },
   "files": [
-    "generators",
-    ""
+    "generators"
   ],
   "main": "generators/index.js",
   "keywords": [
