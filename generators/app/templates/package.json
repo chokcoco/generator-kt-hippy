@@ -8,6 +8,7 @@
     "pack": "node node_modules/@tencent/hippy-pack/cli/pack.js index.js",
     "start:web": "node node_modules/@tencent/hippy-pack/cli/start-web.js index.js",
     "pack:web": "node node_modules/@tencent/hippy-pack/cli/pack-web.js index.js", 
+    "test": "jest",
     "pretty": "prettier src/**/*.js --config ./.prettierrc.js --write"
   },
   "husky": {
@@ -37,7 +38,7 @@
     "@tencent/hippy-react": "1.0.1",
     "@tencent/hippy-react-svg": "latest",
     "@tencent/hippy-react-web": "^1.0.0-beta.2",
-    "@tencent/txkt": "git+http://git.code.oa.com/ktweb/txkt_hippy_base.git#dev"
+    "@tencent/txkt": "1.1.0-beta6"
   },
   "devDependencies": {
     "@tencent/hippy-pack": "latest",
@@ -55,7 +56,7 @@
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.3",
-    "husky": "4.2.3",
+    "husky": "3.0.3",
     "lint-staged": "^9.2.1",
     "node-haste": "^2.12.0",
     "prettier": "^1.13.7",

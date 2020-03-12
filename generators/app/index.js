@@ -3,10 +3,10 @@ const Generator = require('yeoman-generator');
 const chalk = require('chalk');
 const yosay = require('yosay');
 const fs = require("fs-extra");
+const shelljs = require("shelljs")
 
 module.exports = class extends Generator {
   initializing() {
-
     this.log(
       yosay(
         `欢迎您使用：` +
@@ -92,7 +92,9 @@ module.exports = class extends Generator {
     });
   }
 
-  writing() {
+  async writing() {
+    await this._gitinit();
+
     this.fs.copyTpl(
       this.templatePath('./'),
       this.destinationPath('./'),
@@ -118,10 +120,23 @@ module.exports = class extends Generator {
       this.destinationPath('./.eslintrc')
     );
 
-    this.fs.copyTpl(
-      this.templatePath('./.gitignore'),
-      this.destinationPath('./.gitignore')
-    );
+    try {
+      this.fs.copyTpl(
+        this.templatePath('./.gitignore'),
+        this.destinationPath('./.gitignore')
+      );
+    } catch(e) {
+      this.log(`[Warning], No file .gitignore To .gitignore`);
+    }
+
+    try {
+      this.fs.copyTpl(
+        this.templatePath('./.npmignore'),
+        this.destinationPath('./.gitignore')
+      );
+    } catch(e) {
+      this.log(`[Warning], No file .npmignore To .gitignore`);
+    }
 
     this.fs.copyTpl(
       this.templatePath('./.prettierrc.js'),
@@ -154,5 +169,10 @@ module.exports = class extends Generator {
     this.log(chalk.cyan("cd"), projDir);
     this.log(`${chalk.cyan("tnpm run start")}`);
     this.log("开启编码之旅!");
+  }
+
+  async _gitinit() {
+    // husky 依赖于 .git 文件夹
+    await shelljs.exec("git init");
   }
 };

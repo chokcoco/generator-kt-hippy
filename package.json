@@ -1,6 +1,6 @@
 {
-  "name": "@tencent/generator-kt-hippy",
-  "version": "0.0.1",
+  "name": "generator-kt-hippy",
+  "version": "0.0.3",
   "description": "Initialization of a kt hippy project.",
   "homepage": "",
   "author": {
@@ -9,7 +9,8 @@
     "url": ""
   },
   "files": [
-    "generators"
+    "generators",
+    ""
   ],
   "main": "generators/index.js",
   "keywords": [
@@ -27,6 +28,7 @@
     "jest": "^24.8.0",
     "lint-staged": "^9.4.3",
     "prettier": "^1.19.1",
+    "shelljs": "^0.8.3",
     "yeoman-assert": "^3.1.0",
     "yeoman-test": "^1.7.0"
   },
