@@ -1,0 +1,67 @@
+{
+  "name": "<%=packageName%>",
+  "version": "0.0.1",
+  "description": "<%=description%>",
+  "main": "index.js",
+  "scripts": {
+    "start": "node node_modules/@tencent/hippy-pack/cli/start.js index.js",
+    "pack": "node node_modules/@tencent/hippy-pack/cli/pack.js index.js",
+    "start:web": "node node_modules/@tencent/hippy-pack/cli/start-web.js index.js",
+    "pack:web": "node node_modules/@tencent/hippy-pack/cli/pack-web.js index.js", 
+    "pretty": "prettier src/**/*.js --config ./.prettierrc.js --write"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "<%=gitUrl%>"
+  },
+  "keywords": [
+    "hippy",
+    "rn",
+    "<%=packageName%>"
+  ],
+  "author": "<%=author%>",
+  "license": "MIT",
+  "dependencies": {
+    "@tencent/hippy-react": "1.0.1",
+    "@tencent/hippy-react-svg": "latest",
+    "@tencent/hippy-react-web": "^1.0.0-beta.2",
+    "@tencent/txkt": "git+http://git.code.oa.com/ktweb/txkt_hippy_base.git#dev"
+  },
+  "devDependencies": {
+    "@tencent/hippy-pack": "latest",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-react": "^7.8.3",
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "babel-jest": "^25.1.0",
+    "jest": "^25.1.0",
+    "babel-eslint": "^10.0.2",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "eslint": "^5.2.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3",
+    "husky": "4.2.3",
+    "lint-staged": "^9.2.1",
+    "node-haste": "^2.12.0",
+    "prettier": "^1.13.7",
+    "webpack": "^3.11.0"
+  },
+  "bundleConfig": {
+    "VC": 0
+  }
+}
