@@ -25,7 +25,12 @@ module.exports = {
   collectCoverage: true,
   // "collectCoverageFrom": ["**/*.{js,jsx,ts}", "!**/node_modules/**"]
   collectCoverageFrom: [
-    './src/**/**/*.{js,jsx,ts}',
+    './src/services/**/*.{js,jsx,ts}',
+    './src/component/**/*.{js,jsx,ts}',
     '!**/node_modules/**',
   ],
+
+  // 测试报告相关
+  coverageDirectory: './__report__/coverage/',
+  testResultsProcessor: './node_modules/jest-html-reporter',
 };
