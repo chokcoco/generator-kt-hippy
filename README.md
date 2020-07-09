@@ -25,7 +25,7 @@ yo kt-hippy
 
 ## License
 
-MIT © [Coco]()
+MIT 
 
 
 [npm-image]: https://badge.fury.io/js/generator-kt-hippy.svg
